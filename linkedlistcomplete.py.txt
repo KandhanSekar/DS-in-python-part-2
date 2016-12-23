@@ -1,0 +1,50 @@
+#create new class Node
+class Node:
+    def __init__(self,data):
+        self.data=data   #incoming data is assigned to local data
+        self.next=None   # next is initially none, this var is later used to assign to next in linked list
+
+#class LinkedList
+
+class LinkedList:
+    def __init__(self):
+        self.head=None
+
+        #initialise head
+    def printlist(self):
+        temp=self.head
+        while(temp):
+            print(temp.data)
+            temp=temp.next
+    def addfront(self,data):
+        temp=Node(data)
+        temp.next=self.head
+        self.head=temp
+    def addback(self,data):
+        temp=self.head
+        while(temp.next):
+            temp=temp.next
+        newtemp=Node(data)
+        temp.next=newtemp
+    def insertafter(self,data,prevnode):
+        temp=Node(data)
+        temp.next=prevnode.next
+        prevnode.next=temp
+
+#now main
+
+if __name__=='__main__':
+    list=LinkedList()
+    list.head=Node(1)
+    second=Node(2)
+    three=Node(3)
+
+    #now make the link
+
+    list.head.next=second
+    second.next=three
+    list.addfront(4)
+    list.addback(5)
+    list.insertafter(8,second) #give node here
+
+    list.printlist()
