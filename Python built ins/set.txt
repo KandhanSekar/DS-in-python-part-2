@@ -1,0 +1,8 @@
+>>> basket={1,2}
+>>> basket.add(3)
+>>> basket
+set([1, 2, 3])
+>>> basket.add(4)
+>>> basket.add(4)// no error
+>>> 4 in basket
+True
