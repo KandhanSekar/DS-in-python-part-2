@@ -1,0 +1,18 @@
+#USing Dictionary to achieve stuff
+names={1:'kandhan',2:'priya',3:'sekar',4:'gunaraj'}
+
+for g,k in names.items():
+    print g,k
+
+#looping with two lists
+list1=['kandhan','vijay']
+list2=['priya','keerti suresh']
+
+for i,j in zip(list1,list2):
+    print i,j
+
+
+#loop sorted
+
+for i in sorted(list1):
+    print i
